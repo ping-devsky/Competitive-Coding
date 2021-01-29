@@ -36,11 +36,10 @@ Expected Auxiliary Space: O(1)*/
     {
         //add code here.
          Arrays.sort(arr);
-         //Sorting is necessary over here
-         //Always use two pointer approach when the array is sorted
-         //Or have to sort
-        //putting length-2 becaus the value is i < j in find sum
-        //we gonna find the value in reverse way according to target 
+         	//Sorting is necessary over here
+         	//Always use two pointer approach when the array is sorted Or have to sort
+        	//putting length-2 becaus the value is i < j in find sum
+        	//we gonna find the value in reverse way according to target 
         for(int i=0;i<n -2;i++)
         {
             if(findSum(arr,-arr[i],i+1)) return true;
@@ -54,16 +53,17 @@ Expected Auxiliary Space: O(1)*/
     public boolean findSum(int a[],int value,int i)
     {
         int j=a.length -1;
-       
+       //Applied two pointer concept over here 
         while(i<j)
         {
             if(a[i]+a[j] < value)
             {
                 i++;
+		    //if the summation of the array value is lesser than the target then increment the value of i.
             }
             else if(a[i]+a[j]>value)
             {
-                j--;
+                j--;  //if the summation of the array value is greater than the target then decrement the value of j.
             }
             else
             {
